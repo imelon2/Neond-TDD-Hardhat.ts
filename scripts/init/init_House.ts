@@ -12,14 +12,14 @@ const tNEON_Amount = BigNumber.from(20000).mul(BigNumber.from(10).pow(18));
 const tUSDT_Amount = BigNumber.from(20000).mul(BigNumber.from(10).pow(6));
 
 const game = {
-    neonRoulette : "0x2C935aF4AFCE1c9433248B6efaB936Ab77EF6784"
+    neonRoulette : process.env.NEON_ROULETTE_ADDRESS!
 }
 
 async function main() {
     const House = await ethers.getContractAt("House",House_Address);
 
-    await House.initToken(tNEON_Address,300,MIN_tNEON)
-    await House.initToken(tUSDT_Address,300,MIN_tUSDT)
+    await House.initToken(tNEON_Address,300,MIN_tNEON) // token address, Risk, Min bet Amount
+    await House.initToken(tUSDT_Address,300,MIN_tUSDT) // token address, Risk, Min bet Amount
     await House.addGame(game["neonRoulette"])
 
     const tNEON = await ethers.getContractAt("tNEON",tNEON_Address)

@@ -205,10 +205,11 @@ contract NeonRoulette is VRF {
             // Win Game
             if(betAmount != 0) {
                 bounsIndex = uint8(randomWords[1] % 6);// 0~5 EA
-                uint bounsMultipler = 30; // test value
+                uint bounsMultipler = 30; // test value randomWords[2]
                 if(bounsIndex != 0) {
                     uint bonusNum;
                     for(uint i = 0; i < bounsIndex; i++) {
+                        // bonusNum = 2 ** (randomWords[i+3] % 37);
                         bonusNum = 2 ** (randomWords[i+2] % 37);
                         bonusOutcome & bonusNum == 0 ? bonusOutcome += bonusNum : 0 ;
                     }

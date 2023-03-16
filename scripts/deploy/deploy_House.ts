@@ -5,7 +5,7 @@ async function main() {
     const House = await _House.deploy();
     console.log("Deploying House...");
     await House.deployed();
-    console.log("House deployed to:", House.address); // 0x6B0f498a77c05dC5ba0a2d073498b8fB80951ce7
+    console.log("House deployed to:", House.address); // 0x9F1c3F43AD2c1363Dc6af4E17419CE5deEf2491f
 }
 
 main().catch((error) => {

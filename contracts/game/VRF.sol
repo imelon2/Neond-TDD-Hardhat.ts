@@ -23,6 +23,7 @@ abstract contract VRF is Ownable,VRFConsumerBaseV2 {
 
     // address vrfCoordinator = 0x7a1BaC17Ccc5b313516C5E16fb24f7659aA5ebed; // Mumbai
     constructor(address vrfCoordinator,uint32 _numRandomWords) VRFConsumerBaseV2(vrfCoordinator) {
+        COORDINATOR = VRFCoordinatorV2Interface(vrfCoordinator);
         numRandomWords = _numRandomWords;
     }
 
