@@ -5,6 +5,8 @@ const CONTRACT_ADDRESS = 'GAME CONTRACT ADDRESS'
 const WEBSOCKET_MUMBAI_RPC_URL = "MUMBAI_RPC_URL" // wss://ws-mumbai.matic.today/
 
 module.exports = async () => {
+
+
         const httpProvider = new ethers.WebSocketProvider(WEBSOCKET_MUMBAI_RPC_URL)
 
         // BroadCasting on Game Contract 
@@ -13,5 +15,7 @@ module.exports = async () => {
             // DB에 저장되는 로직 ...
         })
 
+
+        
 }
 
